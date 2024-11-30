@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ShopTARgv23.Models.FreeGames.FreeGamesViewModel>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                @foreach (var game in Model)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="game-card card">
+                            <img class="card-img-top" src="@game.Thumbnail" alt="@game.Title"/>
+                            <div class="card-body">
+                                <h5 class="card-title">@game.Title</h5>
+                                <p class="card-text">@game.ShortDescription</p>
+                                <a href="@game.GameUrl" class="btn btn-game" target="_blank">
+                                    @(game.Platform == "Web Browser" ? "Play Now" : "To Download")
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

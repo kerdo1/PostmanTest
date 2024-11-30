@@ -1,0 +1,44 @@
+﻿@model ShopTARgv23.Models.AccuWeathers.AccuWeatherViewModel
+
+<div class="container">
+    <h2>Forecast for the selected city</h2>
+    <h2>@Html.DisplayFor(model => model.CityName)</h2>
+    <hr />
+    <dl class="row text-dark">
+        <div class="form-group row">
+            <label asp-for="TempMinValue" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.TempMinValue) °C
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="TempMaxValue" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.TempMaxValue) °C
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Text" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.Text)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Severity" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.Severity)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Category" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.Category)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="EffectiveDate" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.EffectiveDate)
+        </div>
+    </dl>
+</div>
+
+<div class="container">
+    <form method="get">
+        <button asp-controller="accuWeathers" asp-action="Index" class="btn btn-success">Index</button>
+    </form>
+</div>
